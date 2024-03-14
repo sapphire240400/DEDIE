@@ -422,7 +422,6 @@
 	<h1>GLOSARIO</h1>
 </div>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum egestas justo libero, quis maximus mi blandit cursus. Morbi laoreet arcu sit amet leo dapibus, nec venenatis nunc ultricies. Curabitur luctus, massa nec rhoncus tristique, magna justo consectetur 
 <div class="hover-container">
   <button class="glosario"> 
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
@@ -433,8 +432,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum egestas just
     
   <div class="hover-text">Definicion.</div>
 </div>
-, id maximus augue mi vitae dui. Etiam molestie velit urna, vel volutpat sem pretium nec. Praesent bibendum ullamcorper vehicula.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum egestas justo libero, quis maximus mi blandit cursus. Morbi laoreet arcu sit amet leo dapibus, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum egestas justo libero, quis maximus mi blandit cursus. Morbi laoreet arcu sit amet leo dapibus, nec venenatis nunc ultricies. Curabitur luctus, massa nec rhoncus tristique, magna justo consectetur 
-
 
 <br><br>
 
