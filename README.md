@@ -1,11 +1,11 @@
 # DEDIE
 
 
-############################
-#                          #
-#   ACTUALIZAR SCRIPT      #
-#                          #
-############################
+###############################
+#                             #
+#   1. ACTUALIZAR SCRIPT      #
+#                             #
+###############################
 
 // ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 // ;;  Función para asignar texto a elemento *nombre elemento*      ;;
@@ -31,20 +31,10 @@ function asignar*NombreElemento*() {
   })
 }
 
-############################
-#                          #
-#   ACTUALIZAR SCRIPT      #
-#                          #
-############################
-
-
-
-
-
 
 ##########################
 #                        #
-#   ACTUALIZAR HTML      #
+#   2.ACTUALIZAR HTML    #
 #                        #
 ##########################
 
@@ -53,3 +43,13 @@ function asignar*NombreElemento*() {
         <button id="btn*Elemento*" class="ms-Button">*NombreElemento*</button>
     </div> <br>
 --->
+
+
+#################################################
+#                                               #
+#   3. DAR DE 'ALTA' LA FUNCION EN TRYCATCH()   #
+#                                               #
+#################################################
+
+$("#btn*Elemento*").on("click", () => tryCatch(asignar*NombreElemento*));
+
