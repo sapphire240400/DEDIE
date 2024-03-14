@@ -40,8 +40,16 @@ function asignar*NombreElemento*() {
 
 
 
+
+
 ##########################
 #                        #
 #   ACTUALIZAR HTML      #
 #                        #
 ##########################
+
+<!-- ESTRUCTURA BOTONOES
+    <div>
+        <button id="btn*Elemento*" class="ms-Button">*NombreElemento*</button>
+    </div> <br>
+--->
