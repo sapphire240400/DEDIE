@@ -16,7 +16,7 @@ function asignar*NombreElemento*() {
     selection.load("text, parentBody, parentContentControlOrNullObject");
     await context.sync();
     const textoSeleccionado = selection.text; 
-    const *nombreElemento* = `*Remplazar el contenido del <div> hasta que este se encuentre con algun <p> ${textoSeleccionado}*Remplazar con el resto del contenido del <div> respetando cierre de elementos </>*`; 
+    const *nombreElemento* = ` *Remplazar el contenido del <div> hasta que este se encuentre con algun <p>* ${textoSeleccionado} *Remplazar con el resto del contenido del <div> respetando cierre de elementos </> *`; 
 
     if (!selection.parentContentControlOrNullObject.isNullObject) {     
       selection.parentContentControlOrNullObject.insertText(*nombreElemento*, "Replace"); 
@@ -38,11 +38,11 @@ function asignar*NombreElemento*() {
 #                        #
 ##########################
 
-<!-- ESTRUCTURA BOTONOES
-    <div>
-        <button id="btn*Elemento*" class="ms-Button">*NombreElemento*</button>
-    </div> <br>
---->
+
+<div>
+  <button id="btn*Elemento*" class="ms-Button">*NombreElemento*</button>
+</div> <br>
+
 
 
 #################################################
