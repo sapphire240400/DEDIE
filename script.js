@@ -90,3 +90,56 @@ function asignarText() {
     await context.sync();
   })
 }
+
+
+// ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+// ;;  Función para asignar texto a elemento "TITULO_TEXT"  ;;;
+//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+function asignarText() {
+  Word.run(async (context) => {
+    const selection = context.document.getSelection(); 
+    selection.load("text, parentBody, parentContentControlOrNullObject");
+    await context.sync();
+
+    const textoSeleccionado = selection.text; 
+
+    const TextHtml = `<div class="secc_text"><div class="titulo_text"><img src="img/soporte.png" style="max-width: 60px;"> <h1>${textoSeleccionado}</h1></div><p> </p>
+</div>`; 
+
+    if (!selection.parentContentControlOrNullObject.isNullObject) {
+      selection.parentContentControlOrNullObject.insertText(TextHtml, "Replace");
+    } else {
+      const range = selection.getRange("Start");
+      range.insertText(TextHtml, "Replace");
+      range.font.color = "#FC4C6B";
+    }
+    selection.delete(); 
+    await context.sync();
+  });
+}
+
+// ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+// ;;  Función para asignar texto a elemento "BOLD"         ;;;
+//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+function asignarBold() {
+  Word.run(async (context) => {
+    const selection = context.document.getSelection();
+    selection.load("text, parentBody, parentContentControlOrNullObject");
+    await context.sync();
+    const textoSeleccionado = selection.text;
+    const boldText = `<strong>${textoSeleccionado}</Strong>`;
+
+    if (!selection.parentContentControlOrNullObject.isNullObject) {
+      selection.parentContentControlOrNullObject.insertText(boldText, "Replace");
+    } else {
+      const range = selection.getRange("Start");
+      range.insertText(boldText, "Replace");
+      range.font.color = "purple";
+    }
+    selection.delete();
+    await context.sync();
+  });
+}
+
+
+
