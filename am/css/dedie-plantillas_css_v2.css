@@ -1,0 +1,1804 @@
+/*--------------------------------------------------------------
+                  # Temas  (Colores de cada instancia)
+--------------------------------------------------------------*/
+.main-curso,
+.bann_sect {
+    /*  Ignorar, siempre es lo mismo*/
+    --darker-color: color-mix(in srgb, var(--primary-color-dedie) 85%, #000000e8);
+    --lighter-color: color-mix(in srgb, var(--primary-color-dedie) 55%, #ffffffba);
+    --degradado-color: color-mix(in srgb, var(--primary-color-dedie) 5%, transparent) 100%;
+    --tabs-white: #f5f5f5;
+    --tabs-font: #444;
+    --shadow-box: #c9c9c9;
+    --white: #fff;
+    --black: #333;
+    --subtabs: #fcfcfc;
+}
+.main-curso.dedie_theme_default,
+.bann_sect.dedie_theme_default {
+    /*  Remplazar*/
+    --primary-color-dedie: #45a8c6;
+    --secondary-color-dedie: #133552;
+    --ban-generico: url("https://cite.uaq.mx/dda/pluginfile.php/69/mod_folder/content/0/img/DEDIE/bannergenerico.png");
+}
+.main-curso.dedie_theme_ing_mdc,
+.bann_sect.dedie_theme_ing_mdc {
+    /*  Remplazar*/
+    --primary-color-dedie: #b11827;
+    --secondary-color-dedie: #575756;
+    --ban-generico: url("https://uaqedvirtual.uaq.mx/mdc/pluginfile.php/13891/mod_folder/content/0/img/BANNER%20SENCILLO.png");
+    --ban-modulo: url("https://uaqedvirtual.uaq.mx/mdc/pluginfile.php/13891/mod_folder/content/0/img/BANNER-UNIDAD.png");
+}
+.main-curso.dedie_theme_psico_macupaz,
+.bann_sect.dedie_theme_psico_macupaz {
+    /*  Remplazar*/
+    --primary-color-dedie: #643e88;
+    --secondary-color-dedie: #00a6bc;
+    --ban-generico: url("https://cite.uaq.mx/cite/pluginfile.php/6532/mod_folder/content/0/img/BANNER/banner_generico.png");
+    --ban-modulo: url("https://cite.uaq.mx/cite/pluginfile.php/6532/mod_folder/content/0/img/BANNER/banner_generico2.png");
+}
+.main-curso.dedie_theme_dda_amb,
+.bann_sect.dedie_theme_dda_amb {
+    /*  Remplazar*/
+    --primary-color-dedie: #00adbb;
+    --secondary-color-dedie: #98ad20;
+    --ban-generico: url("https://cite.uaq.mx/dda/pluginfile.php/69/mod_folder/content/0/img/Ambientalizacion/Banner_generico.png");
+}
+.main-curso.dedie_theme_dda_fem,
+.bann_sect.dedie_theme_dda_fem {
+    /*  Remplazar*/
+    --primary-color-dedie: #45477f;
+    --secondary-color-dedie: #00588d;
+    --ban-generico: url("https://cite.uaq.mx/dda/pluginfile.php/69/mod_folder/content/0/img/feminismos/Banner_generico.png");
+    --ban-modulo: url("https://cite.uaq.mx/cite/pluginfile.php/6532/mod_folder/content/0/img/BANNER/banner_generico2.png");
+}
+
+/*--------------------------------------------------------------
+                  # ACCESIBILIDAD
+--------------------------------------------------------------*/
+*:focus {
+    outline: 3px solid var(--lighter-color) !important;
+    outline-offset: 2px;
+}
+
+/*--------------------------------------------------------------
+                  # GENERAL
+--------------------------------------------------------------*/
+.main-curso p {
+    text-align: justify;
+}
+
+/*--------------------------------------------------------------
+                  # CONTENEDOR GENERAL
+--------------------------------------------------------------*/
+.tab-wrapper_act {
+    position: relative;
+}
+
+/*--------------------------------------------------------------
+                  # CONTENEDOR SIDE BAR
+--------------------------------------------------------------*/
+.tabs {
+    text-align: left !important;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    color: var(--tabs-font);
+    background-color: var(--tabs-white);
+    width: 20%;
+    float: left;
+    height: 100%;
+    box-shadow: 2px 3px 8px 1px var(--shadow-box);
+    border-bottom-right-radius: 2vw;
+}
+
+/*--------------------------------------------------------------
+                  # TABS
+--------------------------------------------------------------*/
+.tab-button-curso {
+    width: 100%;
+    min-width: 120px;
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-bottom: 1px solid color-mix(in srgb, var(--primary-color-dedie) 25%, #ffffffba) !important;
+}
+
+/*ACCESIBILIDAD*/
+.tab-button-curso img {
+    pointer-events: none;
+    user-select: none;
+}
+
+.tab-button-curso.active {
+    background: var(--primary-color-dedie);
+    border-color: var(--primary-color-dedie);
+    border-radius: 2px;
+    color: var(--tabs-white) !important;
+}
+
+.tab-button-curso:hover {
+    background: var(--lighter-color);
+    border-color: var(--primary-color-dedie);
+    border-radius: 2px;
+    color: var(--white) !important;
+}
+
+/*--------------------------------------------------------------
+                  # DROPDOWN
+--------------------------------------------------------------*/
+.dedie-dropdown {
+    display: none;
+    background-color: var(--tabs-white);
+    padding: 5px;
+    z-index: 1;
+}
+
+.dedie-dropdown.active {
+    display: block;
+}
+
+.dedie-dropdown {
+    background-color: color-mix(in srgb, var(--tabs-white) 85%, #000000e8) !important;
+}
+
+.dedie-dropdown div {
+    border-bottom: solid 1px var(--primary-color-dedie);
+}
+
+.dedie-dropdown div {
+    text-decoration: none;
+    color: inherit;
+}
+
+.dedie-dropdown div:hover {
+    background-color: var(--primary-color-dedie);
+    color: var(--tabs-white);
+}
+
+.default-icon,
+.hover-icon {
+    margin-left: 10px;
+}
+
+.dedie-dropdown-img {
+    display: flex;
+    align-items: center;
+}
+
+.dedie-dropdown-img img {
+    max-width: 30px;
+    padding-left: 5px;
+    animation: 0.9s updown infinite;
+    pointer-events: none;
+}
+
+.dedie-dropdown-img .default-icon {
+    display: inline-block;
+}
+
+.tabs div.active .default-icon,
+.tabs div:hover .default-icon {
+    display: none;
+}
+
+.dedie-dropdown-img .hover-icon {
+    display: none;
+}
+
+.tabs div.active .hover-icon,
+.tabs div:hover .hover-icon {
+    display: inline-block;
+    animation: none;
+    pointer-events: none;
+}
+
+/* Estilo para el botón activo */
+.active {
+    background-color: var(--primary-color-dedie);
+    color: var(--tabs-white) !important;
+}
+
+/* Ocultos por defecto */
+.hijo {
+    padding-left: 2.2vw;
+    background-color: #dddddd;
+    color: color-mix(in srgb, var(--primary-color-dedie) 75%, #000000e8) !important;
+    display: none;
+}
+
+/*--------------------------------------------------------------
+                  # CONTENEDOR UNIDADES
+--------------------------------------------------------------*/
+.tab-content-curso {
+    margin-left: 20%;
+    padding: 0 0 0 15px;
+    background-color: inherit;
+    margin-bottom: 15px;
+    animation: fadeIn;
+    animation-duration: 1.95s;
+}
+
+.tab-content-curso p {
+    padding: 0 1.65rem;
+}
+
+/*--------------------------------------------------------------
+                  # MARCO GENERAL
+--------------------------------------------------------------*/
+.marco-general {
+    box-shadow: 0 8px 8px var(--shadow-box);
+    border-bottom-right-radius: 19px;
+}
+
+/*--------------------------------------------------------------
+                  # RESPONSIVE
+--------------------------------------------------------------*/
+@media only screen and (max-width: 901px) {
+    .tab-wrapper_act p {
+        margin-left: 4px;
+        margin-right: 4px;
+        text-align: left;
+    }
+
+    .tab-content-curso p {
+        font-size: inherit !important;
+    }
+
+    .tabs {
+        justify-content: space-evenly;
+        float: none;
+        flex-direction: row;
+        background-color: var(--tabs-white);
+        width: 100%;
+        height: inherit;
+    }
+
+    .tab-button-curso,
+    .tab-button-curso.padre,
+    tab-button-curso.hijo {
+        display: none !important;
+    }
+
+    .tab-button-curso.active,
+    .tab-button-curso.padre.active,
+    tab-button-curso.hijo.active {
+        display: block !important;
+        animation: backInRight 0.8s;
+    }
+
+    .tab-button-curso.active {
+        display: block;
+        background-color: inherit;
+        color: var(--primary-color-dedie) !important;
+        text-decoration: none;
+        /*width: 55%;*/
+        font-size: smaller;
+        text-align: center;
+        border-bottom: none;
+    }
+
+    .tab-content-curso {
+        margin: 0 auto;
+        padding: 0 !important;
+    }
+
+    .dedie-dropdown-img .hover-icon,
+    .dedie-dropdown-img .default-icon {
+        display: none !important;
+    }
+}
+
+/*--------------------------------------------------------------
+          # BOTONES NAVEGACION ENTRE TABS (CELULAR)
+--------------------------------------------------------------*/
+@media only screen and (max-width: 900px) {
+    .pre,
+    .next {
+        display: inline-block;
+        border: none;
+        background-color: var(--primary-color-dedie);
+        color: var(--white);
+        width: 35px;
+        border-radius: 0.25rem;
+    }
+
+    .pre:hover,
+    .next:hover {
+        background-color: var(--lighter-color);
+        color: var(--white);
+    }
+
+    .pre {
+        left: 2.5%;
+    }
+
+    .next {
+        right: 2.5%;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .pre,
+    .next {
+        display: none;
+    }
+}
+
+/*--------------------------------------------------------------
+  # BACK TO TOP
+--------------------------------------------------------------*/
+#back-to-top-curso {
+    position: fixed;
+    width: 45px;
+    right: 140px;
+    bottom: 20px;
+    z-index: 1;
+    display: none;
+    padding: 0.2rem;
+    background-color: var(--primary-color-dedie);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    animation: heartbeat 3.5s infinite;
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+#back-to-top-curso > img {
+    max-width: 100%;
+}
+
+#back-to-top-curso:hover {
+    background-color: var(--color-secundario);
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 768px) {
+    #back-to-top-curso {
+        right: 10px;
+        bottom: 10px;
+        display: block;
+    }
+}
+
+/*--------------------------------------------------------------
+                    #FOOTER
+--------------------------------------------------------------*/
+.footer-dedie {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    background-color: var(--tabs-white);
+    text-align: center;
+}
+
+.footer-dedie-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    font-size: 0.8rem;
+}
+
+.footer-dedie-item img {
+    max-width: 80%;
+    height: auto;
+}
+
+.footer-dedie-item:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 1024px) {
+    .footer-dedie {
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .footer-dedie-item:last-child {
+        font-size: 1.1rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .footer-dedie {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .footer-dedie-item:last-child {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .footer-dedie {
+        grid-template-columns: 1fr;
+    }
+    .footer-dedie-item:last-child {
+        font-size: 0.9rem;
+    }
+}
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*                                                            RECURSOS DE CURSO                                                                                          */
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*  -----------------------------------------
+              ANIMACION ROTACION 360
+  ----------------------------------------- */
+#rotating-table {
+    animation: rotate-table-y 1s linear;
+    transform-origin: center;
+    animation-fill-mode: forwards;
+}
+
+@keyframes rotate-table-y {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+/*  -----------------------------------------
+              ANIMACION LATIDO
+  ----------------------------------------- */
+@keyframes latido-dedie {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.09);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes heartbeat {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    14% {
+        transform: scale(1.3);
+    }
+    28% {
+        transform: scale(1);
+    }
+    42% {
+        transform: scale(1.3);
+    }
+    70% {
+        transform: scale(1);
+    }
+}
+
+/*  -----------------------------------------
+              ANIMACION UPDOWN
+  ----------------------------------------- */
+@keyframes updown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(2px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/*  -----------------------------------------
+              BANNER CURSO IMAGEN     
+  ----------------------------------------- */
+.bann_sect {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    /* Imagen aplicada por style desde html, si no se aplica un degradado*/
+    background: var(--ban-modulo, none),
+        linear-gradient(90deg, var(--primary-color-dedie) 0%, var(--secondary-color-dedie) 100%);
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    border-radius: 0.2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    padding: 15px 20px;
+    margin: 0 0 20px 0;
+    overflow: hidden;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Hover */
+.bann_sect:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Elementos */
+.num_m {
+    flex: 0 0 20%;
+    font-weight: 700;
+    font-size: 1.4rem;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.name_m {
+    flex: 1;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .bann_sect {
+        flex-direction: column;
+        text-align: center;
+        background-position: left;
+    }
+
+    .num_m {
+        flex: none;
+        width: 100%;
+        margin: 0 0 10px 0;
+    }
+
+    .name_m {
+        font-size: 1rem;
+    }
+}
+
+/*  -----------------------------------------
+            SECCION CON BANNER GENERICO  
+    ----------------------------------------- */
+.ind_sect {
+    padding: 25px;
+    margin-bottom: 10px;
+    background-color: rgba(var(--primary-color-dedie), 0.6);
+    background-image: var(--ban-generico);
+    border-top-left-radius: 0.5vw;
+    border-top-right-radius: 0.5vw;
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+    animation: pulse 0.85s ease-out forwards;
+}
+
+.ind_sect h2 {
+    display: block;
+    font-size: inherit !important;
+    color: var(--darker-color);
+}
+
+@media (max-width: 600px) {
+    .dedie-ind_sect {
+        background-position: left;
+    }
+}
+/*  -----------------------------------------
+                IFRAME EMBEBER     
+    ----------------------------------------- */
+.embed-responsive {
+    position: relative;
+    display: block;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.guia-dedie {
+    /*  height: 100%;*/
+    height: 615px;
+}
+
+@media only screen and (max-width: 768px) {
+    .guia-dedie {
+        height: auto !important;
+    }
+}
+
+/*--------------------------------------------------------------
+              # SECCION !IMPORTANTE
+--------------------------------------------------------------*/
+.seccion_import {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    gap: 25px;
+    padding: 20px;
+    text-align: center;
+    flex-direction: row;
+}
+
+.item_import {
+    background-color: var(--subtabs);
+    text-align: center;
+    display: flex;
+    box-shadow: 0 4px 8px 0 var(--shadow-box);
+    padding: 3vw;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo {
+    width: 100%;
+    font-size: 18px;
+    background-color: var(--secondary-color-dedie);
+    border-radius: 8px;
+    color: white;
+    margin-bottom: 13px;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 768px) {
+    .seccion_import {
+        flex-direction: column;
+    }
+
+    .item_import {
+        margin-bottom: 3vw;
+    }
+
+    .titulo {
+        font-size: medium;
+    }
+}
+
+/*--------------------------------------------------------------
+# SECCION ACTIVIDADES
+--------------------------------------------------------------*/
+.seccion_act {
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.titulo-act {
+    background-color: var(--secondary-color-dedie);
+    border-radius: 8px;
+    color: white;
+    padding: 3px 10px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.sec_1,
+.sec_2,
+.sec_3 {
+    background-color: var(--subtabs);
+    box-shadow:
+        0 4px 8px 0 rgba(212, 193, 156, 0.09),
+        0 6px 20px 0 rgba(212, 193, 156, 0.02);
+    padding: 25px;
+    flex: 1 1 300px;
+    max-width: 100%;
+    text-align: center;
+}
+
+.sec_1 > p,
+.sec_2 > p,
+.sec_3 > p {
+    text-align: center !important;
+}
+
+/* PANTALLAS NORMALES */
+@media only screen and (min-width: 768px) {
+    .seccion_act {
+        flex-direction: row;
+    }
+    .sec_1,
+    .sec_2 {
+        order: 1;
+    }
+    .sec_3 {
+        order: 3;
+        width: 100%;
+    }
+}
+
+/* PANTALLAS MINI */
+@media only screen and (max-width: 768px) {
+    .seccion_act {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .sec_1,
+    .sec_2,
+    .sec_3 {
+        padding: 15px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .image-container {
+        max-width: 70% !important;
+        margin: 0 auto;
+    }
+}
+
+/*--------------------------------------------------------------
+# IMAGENES CAMBIANTES
+--------------------------------------------------------------*/
+.image-container {
+    position: relative;
+    width: 300px;
+    margin-bottom: 15px;
+}
+
+.image-container img {
+    animation: latido-dedie 2s infinite;
+    width: 100%;
+    display: block;
+    transition: opacity 0.5s ease;
+}
+
+.image-container .second-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.image-container:hover .second-image {
+    opacity: 1;
+}
+
+@media (max-width: 600px) {
+    .image-container {
+        max-width: 100%;
+    }
+
+    .image-container img {
+        height: auto;
+    }
+
+    .image-container .second-image {
+        height: auto;
+        object-fit: cover;
+        left: auto;
+    }
+}
+
+/*--------------------------------------------------------------
+    SEPARADOR DE CONTENIDO PARA LA UNIDAD
+--------------------------------------------------------------*/
+.separador {
+    background-color: var(--secondary-color-dedie);
+    padding: 2px;
+}
+
+/*--------------------------------------------------------------
+  # BACK TO TOP
+--------------------------------------------------------------*/
+#back-to-top-curso {
+    position: fixed;
+    width: 45px;
+    right: 140px;
+    bottom: 20px;
+    z-index: 1;
+    display: none;
+    padding: 0.2rem;
+    background-color: var(--primary-color-dedie);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    animation: heartbeat 3.5s infinite;
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+#back-to-top-curso > img {
+    max-width: 100%;
+}
+
+#back-to-top-curso:hover {
+    background-color: var(--secondary-color-dedie);
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 768px) {
+    #back-to-top-curso {
+        right: 10px;
+        bottom: 10px;
+        display: block;
+    }
+}
+
+/*--------------------------------------------------------------
+              # TITULOS GENERAL
+--------------------------------------------------------------*/
+.dedie-titulo_text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dedie-titulo_text img {
+    max-width: 38px;
+    margin-right: 5px;
+}
+
+.dedie-titulo_text > p {
+    margin: 0;
+}
+
+.dedie-titulo_text > h1,
+.dedie-titulo_text > h2,
+.dedie-titulo_text > h3,
+.dedie-titulo_text > h4,
+.dedie-titulo_text > h5 {
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding-left: 0;
+}
+
+/*--------------------------------------------------------------
+              # SECCION TEXTO IMPORTANTE
+--------------------------------------------------------------*/
+.secc_important_text {
+    margin: 1vw;
+    margin-right: 4.5vw;
+    margin-left: 4vw;
+    box-shadow: 0 4px 8px 0 var(--shadow-box);
+    background: var(--degradado-color);
+    border-radius: 6px;
+    border-style: solid;
+    border-color: var(--primary-color-dedie);
+}
+
+.important_text {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    margin: 1vw;
+    flex-direction: column;
+}
+
+@media only screen and (max-width: 768px) {
+    .secc_important_text,
+    .important_text {
+        margin: 2vw;
+    }
+
+    .secc_important_text,
+    .important_text img {
+        margin: 2vw;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/*--------------------------------------------------------------
+              # SECCION GREEN TEXT
+--------------------------------------------------------------*/
+.dedie-texto {
+    color: inherit;
+}
+
+.dedie-resaltado {
+    background-color: var(--darker-color);
+    color: var(--white);
+    padding: 0.05rem 0.25rem;
+    border-radius: 30px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+/*--------------------------------------------------------------
+              # SECCION TEMARIO
+--------------------------------------------------------------*/
+.temario {
+    padding-top: 1.5vw;
+    text-align: justify;
+    margin: 0.5vw;
+}
+
+.container_temario {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 768px) {
+    .temario {
+        font-size: medium;
+    }
+}
+
+.table_curso {
+    height: 200px;
+    flex-basis: calc(50% - 10px);
+    background-color: var(--white) f;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: left;
+    border: solid var(--secondary-color-dedie) 1.75px;
+    border-radius: 12px;
+    transition: opacity 1.2s ease-in-out;
+}
+
+.hidden-curso {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.visible {
+    opacity: 1;
+    transition: opacity 1.2s ease-in-out;
+}
+
+.table_curso table {
+    width: 100%;
+}
+
+.table_curso table td {
+    padding: 8px;
+}
+
+.table_curso table th {
+    border-top-right-radius: 10px !important;
+    border-top-left-radius: 10px !important;
+    background-color: var(--secondary-color-dedie);
+    color: var(--white);
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .container_temario {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+}
+
+/*--------------------------------------------------------------
+              # SECCION GLOSARIO
+--------------------------------------------------------------*/
+.hover-container {
+    position: relative;
+    display: inline-block;
+}
+
+.hover-text {
+    visibility: hidden;
+    width: 100%;
+    overflow-y: auto;
+    background-color: var(--lighter-color);
+    text-align: center;
+    padding: 4px 8px;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 1;
+    bottom: calc(100% + 5px);
+    left: 50%;
+    transform: translateX(-50%);
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.hover-text p {
+    color: var(--white) !important;
+}
+
+.hover-container:hover .hover-text {
+    visibility: visible;
+}
+
+.glosario {
+    display: flex;
+    align-items: center;
+    border: none;
+    margin-left: 10px;
+    margin-right: 5px;
+    background-color: var(--tabs-white);
+}
+
+.glosario img {
+    max-width: 25px;
+    margin: 0;
+}
+
+.glosario p {
+    margin: 0;
+}
+
+@media only screen and (max-width: 768px) {
+    .hover-text {
+        max-width: 400px;
+        bottom: calc(100% + 5px);
+    }
+}
+
+/*--------------------------------------------------------------
+  # SECCION CONTENIDO INTERACTIVO
+--------------------------------------------------------------*/
+.container-video {
+    position: relative;
+    overflow: hidden-curso;
+    width: 100%;
+    padding-top: 46.25%;
+    align-items: center;
+}
+
+.container-h5p {
+    position: relative;
+    overflow: hidden-curso;
+    width: 100%;
+    padding-top: 46.25%;
+    align-items: center;
+}
+
+.responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+    .container-video {
+        padding-top: 64.25%;
+    }
+
+    .container-h5p {
+        padding-top: 100%;
+    }
+}
+
+/*--------------------------------------------------------------
+                    collapse
+--------------------------------------------------------------*/
+.collapsible-curso {
+    background-color: var(--secondary-color-dedie);
+    cursor: pointer;
+    padding: 18px;
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
+    border: none;
+    border-radius: 3px;
+    text-align: center;
+    outline: none;
+    font-size: 15px;
+}
+
+.collapsible-curso > strong {
+    color: var(--white) !important;
+}
+
+.active-collapse,
+.collapsible-curso:hover,
+.active-collapse > strong {
+    background-color: var(--darker-color);
+    color: var(--white) !important;
+}
+
+.collapsible-curso img {
+    max-width: 22px;
+}
+
+.content-collapse-curso {
+    padding: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
+    border: none;
+    display: none;
+    overflow: hidden;
+    text-align: left;
+    background-color: var(--subtabs);
+    box-shadow: 2px 3px 8px 1px var(--shadow-box);
+}
+
+.collapsible-curso .default-icon {
+    display: inline-block;
+    animation: 0.9s updown infinite;
+}
+
+.collapsible-curso .hover-icon {
+    display: none;
+}
+
+.collapsible-curso:hover .default-icon,
+.active-collapse .default-icon {
+    display: none;
+}
+
+.collapsible-curso:hover .hover-icon,
+.active-collapse .hover-icon {
+    display: inline-block;
+    animation: none;
+}
+
+/*--------------------------------------------------------------
+                    DOCENTES SEMBLANZAS
+--------------------------------------------------------------*/
+.dedie-container-semblanza {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.profile-dedie {
+    background-color: white;
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.profile-dedie img {
+    width: 100%;
+    max-width: 205px;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.profile-dedie p {
+    text-align: center;
+}
+
+.profile-dedie:hover {
+    transform: translateY(-10px);
+}
+
+.profile-dedie-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.semblanza {
+    background-color: var(--primary-color);
+    border-radius: 2rem;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0 10px 0 10px;
+}
+
+.semblanza:hover {
+    background: var(--lighter-color);
+}
+
+.semblanza > a {
+    color: var(--white) !important;
+    text-decoration: none !important;
+}
+
+@media (max-width: 900px) {
+    .profile-dedie {
+        width: 45%;
+    }
+
+    .profile-dedie img {
+        width: 50%;
+        height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .profile-dedie {
+        width: 100%;
+    }
+
+    .profile-dedie img {
+        width: 50%;
+        height: auto;
+    }
+}
+
+/*--------------------------------------------------------------
+              # SECCION TABLAS
+--------------------------------------------------------------*/
+.container_tablas th {
+    text-align: center;
+    color: var(--white);
+    background-color: var(--tabs-white);
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.container_tablas table {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+.container_tablas,
+.dem-table-responsive {
+    animation: fadeInLeft;
+    animation-duration: 0.95s;
+}
+
+/*--------------------------------------------------------------
+    # TABLAS
+--------------------------------------------------------------*/
+#rotating-table > div > table > thead > tr > th {
+    text-align: center;
+}
+#rotating-table > div > table > tbody > tr > th > p {
+    padding: 0 !important;
+}
+
+.tablas table td tr {
+    text-align: left;
+    align-content: center;
+}
+
+.tablas thead {
+    background-color: var(--secondary-color-dedie);
+    color: var(--white) !important;
+}
+
+.dem-table-responsive {
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.dem-table-responsive td,
+.dem-table-responsive th,
+.dem-table-responsive tr {
+    border: solid 1px var(--darker-color);
+}
+
+.dem-table-responsive td {
+    text-align: center !important;
+}
+
+#rotating-table > div > table > tbody > tr > td > a > img {
+    animation: latido-dedie 1.2s infinite;
+}
+#rotating-table > div > table > tbody > tr > td > a > img:hover {
+    animation: none !important;
+}
+
+.dem-table-responsive td > p {
+    text-align: center;
+    padding-left: 0 !important;
+    font-size: smaller;
+    margin-bottom: 0 !important;
+}
+
+.dem-table-responsive th {
+    font-weight: normal;
+}
+
+.dem-table-responsive a {
+    color: var(--primary-color-dedie);
+    text-decoration: none;
+    animation: latido-dedie 2s infinite;
+}
+
+.dem-table-responsive a:hover {
+    color: var(--darker-color);
+    cursor: pointer;
+}
+
+.table-wrapper-curso {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table-wrapper-curso td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid var(--primary-color-dedie);
+}
+
+.table-wrapper-curso td:first-child {
+    min-width: 150px;
+    max-width: 150px;
+}
+
+.table-wrapper-curso td:last-child {
+    word-break: break-all;
+}
+
+@media screen and (max-width: 768px) {
+    #rotating-table > div > table > tbody > tr > td > p {
+        margin: 0 !important;
+        padding: 0 !important;
+        text-align: center !important;
+    }
+
+    .dem-table-responsive,
+    .dem-table-responsive thead,
+    .dem-table-responsive tbody,
+    .dem-table-responsive tr {
+        display: block;
+    }
+
+    .dem-table-responsive thead tr {
+        display: none !important;
+    }
+
+    .dem-table-responsive td {
+        display: block;
+        width: 100%;
+        text-align: center !important;
+        border: none;
+        border-bottom: 1px solid var(--darker-color);
+        padding: 1rem 0;
+    }
+
+    .dem-table-responsive td::before {
+        content: attr(data-label);
+        display: none !important;
+        /*display: block;*/
+        background-color: var(--primary-color-dedie);
+        color: var(--white);
+        font-weight: bold;
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/*--------------------------------------------------------------
+# FINAL ACTIVIDAD
+--------------------------------------------------------------*/
+.element-dedie {
+    width: 50%;
+    height: 200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+    border-bottom-right-radius: 15px;
+    box-shadow: 0 7px 10px 0 var(--shadow-box);
+}
+
+.white-part-dedie {
+    width: 100%;
+    height: 80%;
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.white-part-dedie img {
+    width: 100px !important;
+    height: 100px !important;
+    border-radius: 50% !important;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.white-part-dedie h2 {
+    font-size: 24px;
+    color: var(--darker-color);
+    transition: 0.3s;
+}
+
+.element-dedie::after {
+    content: "";
+    width: 100%;
+    height: 20%;
+    background: linear-gradient(to right, var(--primary-color-dedie), var(--lighter-color));
+    border-bottom-right-radius: 15px;
+}
+
+.element-dedie:hover {
+    background-color: color-mix(in srgb, var(--tabs-white) 85%, #000000e8);
+}
+
+.element-dedie:hover .white-part-dedie {
+    background-color: color-mix(in srgb, var(--tabs-white) 99%, #000000e8);
+}
+
+.element-dedie:hover .white-part-dedie h2 {
+    color: var(--primary-color-dedie);
+}
+
+.element-dedie:hover .white-part-dedie img {
+    transform: scale(1.1);
+}
+
+.element-dedie:hover::after {
+    background: linear-gradient(to right, var(--darker-color), var(--primary-color-dedie));
+}
+
+@media screen and (max-width: 768px) {
+    .element-dedie {
+        margin-left: 5%;
+        width: 90%;
+    }
+}
+
+/*--------------------------------------------------------------
+# BOTON DISPLAY INFORMACION
+--------------------------------------------------------------*/
+.button-container2-dedie {
+    display: flex;
+    gap: 10px;
+    margin: 20px;
+}
+
+.dedie-info-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.dedie-info-button {
+    animation: latido-dedie 2s infinite;
+    background-color: var(--primary-color-dedie);
+    border: none;
+    padding: 10px;
+    color: var(--white);
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.dedie-info-button:hover {
+    background-color: var(--lighter-color);
+    border: none;
+    padding: 10px;
+    color: var(--white);
+}
+
+.dedie-info-content {
+    background-color: var(--white);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+}
+
+.close-btn-dedie {
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: var(--white);
+}
+
+/*--------------------------------------------------------------
+# SUBTEMAS EN COLUMNA 
+--------------------------------------------------------------*/
+.dedie-container-subtabs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.dedie-button-container-subtabs {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+.dedie-toggle-button-subtabs {
+    /*animation: latido-dedie 2s infinite;*/
+    justify-content: space-around;
+    background-color: var(--primary-color-dedie);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin: 0 5px 5px 5px;
+    border-bottom-right-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dedie-toggle-button-subtabs:hover,
+.dedie-active-button-subtabs {
+    background-color: var(--lighter-color);
+    color: var(--white);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.dedie-content-container-subtabs {
+    width: 80%;
+    padding: 18px;
+    border-top: 2px solid var(--darker-color);
+    background-color: var(--subtabs);
+    box-shadow: -1px 13px 15px 0 rgba(162, 131, 178, 0.4);
+}
+
+.dedie-content-subtabs {
+    display: none;
+}
+
+.dedie-active-content-subtabs {
+    display: block;
+}
+
+.dedie-next-content-subtabs {
+    /*animation: latido-dedie 2s infinite;*/
+    color: var(--darker-color);
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: underline;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dedie-next-content-subtabs:hover {
+    color: var(--primary-color-dedie);
+}
+
+@media only screen and (max-width: 768px) {
+    .dedie-container-subtabs {
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+    }
+    .dedie-toggle-button-subtabs {
+        margin-top: 0;
+    }
+    .dedie-button-container-subtabs {
+        width: 100%;
+        margin: 0;
+        flex-direction: column;
+        overflow-x: auto;
+        justify-content: space-around;
+    }
+    .dedie-content-container-subtabs {
+        width: 100%;
+    }
+}
+
+/*--------------------------------------------------------------
+  # ESTILO ACTIVIDADES | RECURSOS
+--------------------------------------------------------------*/
+.button-container-subtabs {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 768px) {
+    .button-container-subtabs {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+}
+
+.toggle-button-subtabs {
+    background: var(--primary-color-dedie);
+    color: var(--white);
+    border: none;
+    border-radius: 2vw;
+    font-weight: 500;
+    padding: 7px 20px;
+    margin: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.active-button-subtabs,
+.toggle-button-subtabs:hover {
+    background-color: var(--lighter-color);
+    color: var(--white);
+}
+
+@media screen and (max-width: 768px) {
+    .toggle-button-subtabs {
+        font-size: 16px;
+        padding: 8px 16px;
+        margin: 8px;
+        border-radius: 2px;
+    }
+}
+
+.content-subtabs {
+    display: none;
+    padding: 20px;
+    margin: 10px;
+    margin-left: 32px;
+    margin-right: 32px;
+    animation: fadeIn;
+    animation-duration: 0.95s;
+    box-shadow: 3px 5px 8px var(--shadow-box);
+    border-bottom-right-radius: 19px;
+}
+
+.active-content-subtabs {
+    display: block;
+}
+
+@media only screen and (max-width: 768px) {
+    .content-subtabs {
+        padding: 5px;
+        line-height: 15px;
+        margin: 2px;
+    }
+}
+
+/*--------------------------------------------------------------
+# BOTON GENERICO
+--------------------------------------------------------------*/
+.dedie-btn {
+    margin: 0 auto;
+    background: var(--primary-color-dedie);
+    border: none;
+    padding: 0.8vw;
+    border-radius: 3vw;
+    color: var(--white);
+    cursor: pointer;
+    animation: latido-dedie 2.4s infinite;
+}
+
+.dedie-btn:hover {
+    background: var(--lighter-color);
+    animation: none;
+}
+
+/*--------------------------------------------------------------
+# CONECTORES DE TEMAS
+--------------------------------------------------------------*/
+.conector,
+.conector > p {
+    font-size: medium;
+    text-align: center !important;
+    font-style: italic;
+    padding: 2.25rem 4.5rem !important;
+}
+
+.conector > strong {
+    background-color: var(--primary-color-dedie);
+    margin: 0.25rem;
+    color: var(--white) !important;
+    padding: 0.2em 0.5em;
+    border-radius: 1em;
+    cursor: pointer;
+}
+
+.conector > strong:hover {
+    background-color: var(--lighter-color);
+}
+
+.conector a {
+    color: var(--white) !important;
+    text-decoration: none !important;
+}
+
+@media only screen and (max-width: 768px) {
+    .conector,
+    .conector > p {
+        padding: 2.25rem 0.55rem !important;
+        text-align: justify !important;
+    }
+}
+
+/*--------------------------------------------------------------
+# LISTAS
+--------------------------------------------------------------*/
+.tab-content-curso .marco-general > ul,
+.tab-content-curso .marco-general > ol {
+    padding-left: 55px !important;
+    padding-right: 25px !important;
+    text-align: justify !important;
+}
+
+.tab-content-curso .marco-general > ul > li,
+.tab-content-curso .marco-general > ol > li {
+    padding: 5px !important;
+}
+
+.content-collapse-curso ol,
+.content-collapse-curso ul {
+    padding-left: 3.5rem !important;
+    text-align: justify;
+    padding-right: 1.5rem;
+}
+
+.col-xs-12 > ol,
+.col-xs-6 > ol,
+.col-xs-12 > ul,
+.col-xs-6 > ul {
+    padding-left: 3.75rem !important;
+}
+
+/*--------------------------------------------------------------
+# LECTORES DE PANTALLA
+--------------------------------------------------------------*/
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+/*--------------------------------------------------------------
+# STRONG
+--------------------------------------------------------------*/
+strong {
+    color: var(--primary-color-dedie);
+}
+
+/*--------------------------------------------------------------
+# HR
+--------------------------------------------------------------*/
+hr {
+    width: 95% !important;
+    margin: 0 auto;
+    color: var(--shadow-box);
+}
+
+/*--------------------------------------------------------------
+# ESTILO ELEMENTO AUDIO
+--------------------------------------------------------------*/
+audio {
+    width: 85%;
+    max-width: 500px;
+    height: 40px;
+    display: block;
+    margin: 10px auto;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    audio {
+        max-width: 100%;
+        height: 45px;
+    }
+}
