@@ -653,7 +653,7 @@
     margin-bottom: 10px;
     background-color: rgba(var(--primary-color-dedie), 0.6);
     background-image: var(--ban-generico, none),
-        linear-gradient(90deg, var(--primary-color-dedie) 0%, var(--secondary-color-dedie) 100%);
+        linear-gradient(90deg, var(--secondary-color-dedie) 100%, var(--primary-color-dedie) 0%);
     border-top-left-radius: 0.5vw;
     border-top-right-radius: 0.5vw;
     background-size: cover;
@@ -1900,3 +1900,4 @@ audio {
         height: 45px;
     }
 }
+
